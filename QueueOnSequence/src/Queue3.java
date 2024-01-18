@@ -19,14 +19,10 @@ public class Queue3<T> extends QueueSecondary<T> {
      * Private members --------------------------------------------------------
      */
 
-    /**
-     * Entries included in {@code this}.
-     */
+    /** Entries included in {@code this}. */
     private Sequence<T> entries;
 
-    /**
-     * Creator of initial representation.
-     */
+    /** Creator of initial representation. */
     private void createNewRep() {
         this.entries = new Sequence1L<T>();
     }
@@ -35,9 +31,7 @@ public class Queue3<T> extends QueueSecondary<T> {
      * Constructor ------------------------------------------------------------
      */
 
-    /**
-     * No-argument constructor.
-     */
+    /** No-argument constructor. */
     public Queue3() {
         this.createNewRep();
     }
@@ -85,15 +79,13 @@ public class Queue3<T> extends QueueSecondary<T> {
     @Override
     public final void enqueue(T x) {
         assert x != null : "Violation of: x is not null";
-
         // TODO - fill in body
-
+        this.entries.add(this.length(), x); // TM#1
     }
 
     @Override
     public final T dequeue() {
         assert this.length() > 0 : "Violation of: this /= <>";
-
         // TODO - fill in body
 
         // This line added just to make the component compilable.
@@ -102,7 +94,6 @@ public class Queue3<T> extends QueueSecondary<T> {
 
     @Override
     public final int length() {
-
         // TODO - fill in body
 
         // This line added just to make the component compilable.
